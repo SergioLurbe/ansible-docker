@@ -1,0 +1,6 @@
+- hosts: web
+  become: true
+  vars:
+    - username: "app"
+      nombre: "Usuario prueba"
+      constrasena:
