@@ -1,0 +1,5 @@
+---
+- hosts: web
+  tasks:
+    - name: Start Apache
+      command: echo >> hello world helloworld
