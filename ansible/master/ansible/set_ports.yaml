@@ -1,0 +1,14 @@
+---
+- hosts: web
+  tasks:
+    - name: Ensure the default Apache port is 8080
+      lineinfile:
+        path: /etc/apache2/sites-available/000-default.conf
+        regexp: '<VirtualHost *:80> '
+        insertafter: '<VirtualHost *:80>'
+        line: <VirtualHost *:8080>
+    - name : Change port
+        path: /etc/apache2/ports.conf
+        regecp: 'Listen '
+        insertafter: 'Listen '
+        line: Listen 8080
